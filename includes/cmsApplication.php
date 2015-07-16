@@ -1,35 +1,19 @@
 <?php
 require_once('cmsBase.php');
 class CmsApplication extends CmsBase{
+	// semua kode yang ada disini dapat
+	// diakses melalui fungsi utama dalam CMS.
+
 	function run(){
-	if (isset($_REQUEST['task'])){ // isset = memeriksa apakah ada isinya atau tidak/ 
-	$task = $_REQUEST['task'];
-	switch ($task){
-		case 'addcontent':
-			$this->addcontent();
-			break;
-		case 'anyothertask':
-			$this->anyothertask();
-			break;
-		default :
-			$this->viewcontent();
-		echo 'tidak ada request';
-		}
-		}
-		else{
-				$this->viewcontent();
-				
-			}	
+		// disini adalah kode untuk mengatur 
+		// seluruh proses dalam cmsApplicaion
+		// fungsi ini akan dipanggil dari templateFunction
+		$method = (isset($_REQUEST['task']))?$_REQUEST['task']:'display';
+		$this->$method();
 	}
 
-	function addcontent(){
-		
+	function display(){
+		echo "This is base display";
 	}
 
-	function viewcontent(){
-		echo 'disini akan dibuat fungsi untuk menampilkan konten';
-	}
-	function anyothertask(){
-		echo 'fngsi lainnya';
-	}
 }
