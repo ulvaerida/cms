@@ -1,7 +1,7 @@
 <?php
 require_once('includes/templateFunctions.php');
-$tmplt = new TemplateFunctions();
-$tmplt->show();
-
+$tmpl=new TemplateFunctions();
+$tmpl->setWidget('logoPosition','hello');
+$tmpl->setWidget('sidebarPosition','hello');
+$tmpl->show();
 ?>
-

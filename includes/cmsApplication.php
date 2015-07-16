@@ -18,6 +18,7 @@ class CmsApplication extends CmsBase{
 		}
 		else{
 				$this->viewcontent();
+				
 			}	
 	}
 
